@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BouncePlatform - Bounce House Rental Management Software</title>
+    <meta name="description" content="The all-in-one booking and management platform for bounce house rental businesses. Manage bookings, customers, inventory, payments, and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: #1f2937; line-height: 1.6; }
+        
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .logo { display: flex; align-items: center; gap: 0.5rem; font-weight: 800; font-size: 1.25rem; }
+        .logo-icon { font-size: 1.5rem; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: #6b7280; font-weight: 500; text-decoration: none; transition: color 0.2s; }
+        .nav-links a:hover { color: #f97316; }
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.625rem 1.25rem; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; font-size: 0.9rem; }
+        .btn-primary { background: linear-gradient(135deg, #f97316, #ec4899); color: white; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(249,115,22,0.4); }
+        .btn-secondary { background: #f3f4f6; color: #374151; }
+        .btn-secondary:hover { background: #e5e7eb; }
+        .btn-lg { padding: 0.875rem 1.75rem; font-size: 1rem; }
+        .btn-white { background: white; color: #f97316; }
+        .btn-white:hover { background: #fff7ed; }
+        
+        /* Hero */
+        .hero {
+            padding: 8rem 2rem 4rem;
+            background: linear-gradient(135deg, #fff7ed 0%, #fdf2f8 50%, #f0f9ff 100%);
+            text-align: center;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #f97316;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero h1 span {
+            background: linear-gradient(135deg, #f97316, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+        .hero p { font-size: 1.25rem; color: #6b7280; max-width: 600px; margin: 0 auto 2rem; }
+        .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .hero-image {
+            margin-top: 3rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+        }
+        .hero-image img { width: 100%; display: block; }
+        .hero-screenshot {
+            background: linear-gradient(135deg, #1f2937, #374151);
+            padding: 2rem;
+            color: white;
+            text-align: left;
+        }
+        .mock-header { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+        .mock-dot { width: 12px; height: 12px; border-radius: 50%; }
+        .mock-dot.red { background: #ef4444; }
+        .mock-dot.yellow { background: #f59e0b; }
+        .mock-dot.green { background: #10b981; }
+        .mock-ui { background: white; border-radius: 8px; padding: 1rem; color: #1f2937; }
+        .mock-sidebar { width: 60px; background: #111827; border-radius: 8px; padding: 0.5rem; display: inline-block; vertical-align: top; }
+        .mock-sidebar-item { width: 40px; height: 40px; background: #374151; border-radius: 6px; margin-bottom: 0.5rem; }
+        .mock-sidebar-item.active { background: linear-gradient(135deg, #f97316, #ec4899); }
+        .mock-content { display: inline-block; vertical-align: top; width: calc(100% - 80px); padding-left: 1rem; }
+        .mock-stats { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+        .mock-stat { flex: 1; background: #f3f4f6; border-radius: 6px; padding: 0.75rem; text-align: center; }
+        .mock-stat-value { font-size: 1.25rem; font-weight: 700; color: #f97316; }
+        .mock-stat-label { font-size: 0.65rem; color: #6b7280; }
+        .mock-table { width: 100%; }
+        .mock-row { display: flex; gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb; font-size: 0.75rem; }
+        .mock-row:last-child { border-bottom: none; }
+        .mock-badge { background: #d1fae5; color: #065f46; padding: 0.125rem 0.5rem; border-radius: 9999px; font-size: 0.6rem; font-weight: 600; }
+        .mock-badge.pending { background: #fef3c7; color: #92400e; }
+        
+        /* Features */
+        .features {
+            padding: 5rem 2rem;
+            background: white;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { font-size: 2.25rem; font-weight: 800; margin-bottom: 1rem; }
+        .section-header p { color: #6b7280; font-size: 1.125rem; max-width: 600px; margin: 0 auto; }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .feature-card {
+            padding: 2rem;
+            border-radius: 16px;
+            background: #f9fafb;
+            transition: all 0.3s;
+        }
+        .feature-card:hover {
+            background: white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+        }
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #fff7ed, #fdf2f8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .feature-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .feature-card p { color: #6b7280; }
+        
+        /* Pricing */
+        .pricing {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            color: white;
+        }
+        .pricing .section-header h2 { color: white; }
+        .pricing .section-header p { color: #9ca3af; }
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .pricing-card {
+            background: white;
+            color: #1f2937;
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+        }
+        .pricing-card.featured {
+            background: linear-gradient(135deg, #f97316, #ec4899);
+            color: white;
+            transform: scale(1.05);
+        }
+        .pricing-card.featured .pricing-price { color: white; }
+        .pricing-card.featured .pricing-features li { color: rgba(255,255,255,0.9); }
+        .pricing-card.featured .btn { background: white; color: #f97316; }
+        .pricing-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fbbf24;
+            color: #1f2937;
+            padding: 0.25rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+        .pricing-name { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .pricing-price { font-size: 3rem; font-weight: 800; color: #f97316; }
+        .pricing-price span { font-size: 1rem; font-weight: 500; color: #6b7280; }
+        .pricing-card.featured .pricing-price span { color: rgba(255,255,255,0.8); }
+        .pricing-desc { color: #6b7280; margin-bottom: 1.5rem; }
+        .pricing-card.featured .pricing-desc { color: rgba(255,255,255,0.8); }
+        .pricing-features { list-style: none; margin-bottom: 1.5rem; }
+        .pricing-features li { padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem; }
+        .pricing-features li::before { content: '✓'; color: #10b981; font-weight: 700; }
+        .pricing-card.featured .pricing-features li::before { color: #fbbf24; }
+        
+        /* CTA */
+        .cta {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #fff7ed 0%, #fdf2f8 100%);
+            text-align: center;
+        }
+        .cta h2 { font-size: 2.25rem; font-weight: 800; margin-bottom: 1rem; }
+        .cta p { color: #6b7280; font-size: 1.125rem; margin-bottom: 2rem; }
+        
+        /* Footer */
+        .footer {
+            background: #111827;
+            color: #9ca3af;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .footer-links a { color: #9ca3af; text-decoration: none; }
+        .footer-links a:hover { color: white; }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            .navbar { padding: 1rem; }
+            .nav-links { display: none; }
+            .hero { padding: 6rem 1rem 3rem; }
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .pricing-card.featured { transform: none; }
+            .mock-sidebar { display: none; }
+            .mock-content { width: 100%; padding: 0; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-icon">🎪</span>
+            <span>BouncePlatform</span>
+        </div>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="/demo">Demo</a>
+            <a href="/demo/admin" class="btn btn-primary">Try Admin Demo</a>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <div class="hero-badge">🚀 Built for bounce house businesses</div>
+        <h1>Manage Your <span>Bounce House</span><br>Rental Business</h1>
+        <p>The all-in-one platform for bookings, customers, inventory, payments, and waivers. Stop juggling spreadsheets and start growing your business.</p>
+        <div class="hero-buttons">
+            <a href="/demo/admin" class="btn btn-primary btn-lg">Try Live Demo →</a>
+            <a href="#pricing" class="btn btn-secondary btn-lg">View Pricing</a>
+        </div>
+        
+        <div class="hero-image">
+            <div class="hero-screenshot">
+                <div class="mock-header">
+                    <div class="mock-dot red"></div>
+                    <div class="mock-dot yellow"></div>
+                    <div class="mock-dot green"></div>
+                </div>
+                <div class="mock-ui">
+                    <div class="mock-sidebar">
+                        <div class="mock-sidebar-item active"></div>
+                        <div class="mock-sidebar-item"></div>
+                        <div class="mock-sidebar-item"></div>
+                        <div class="mock-sidebar-item"></div>
+                    </div>
+                    <div class="mock-content">
+                        <div class="mock-stats">
+                            <div class="mock-stat">
+                                <div class="mock-stat-value">12</div>
+                                <div class="mock-stat-label">Today's Bookings</div>
+                            </div>
+                            <div class="mock-stat">
+                                <div class="mock-stat-value">$4,280</div>
+                                <div class="mock-stat-label">Month Revenue</div>
+                            </div>
+                            <div class="mock-stat">
+                                <div class="mock-stat-value">$890</div>
+                                <div class="mock-stat-label">Outstanding</div>
+                            </div>
+                            <div class="mock-stat">
+                                <div class="mock-stat-value">3</div>
+                                <div class="mock-stat-label">Pending Waivers</div>
+                            </div>
+                        </div>
+                        <div class="mock-table">
+                            <div class="mock-row" style="font-weight:600;color:#6b7280;">
+                                <span style="flex:2">Customer</span>
+                                <span style="flex:2">Event</span>
+                                <span style="flex:1">Total</span>
+                                <span style="flex:1">Status</span>
+                            </div>
+                            <div class="mock-row">
+                                <span style="flex:2">Sarah Johnson</span>
+                                <span style="flex:2">Emma's Birthday</span>
+                                <span style="flex:1">$211</span>
+                                <span style="flex:1"><span class="mock-badge">Confirmed</span></span>
+                            </div>
+                            <div class="mock-row">
+                                <span style="flex:2">Mike Thompson</span>
+                                <span style="flex:2">Block Party</span>
+                                <span style="flex:1">$450</span>
+                                <span style="flex:1"><span class="mock-badge pending">Pending</span></span>
+                            </div>
+                            <div class="mock-row">
+                                <span style="flex:2">Lisa Chen</span>
+                                <span style="flex:2">Church Picnic</span>
+                                <span style="flex:1">$370</span>
+                                <span style="flex:1"><span class="mock-badge">Confirmed</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Everything You Need to Run Your Business</h2>
+                <p>Built by rental operators who understand your daily challenges</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📅</div>
+                    <h3>Smart Booking Management</h3>
+                    <p>Calendar view, availability checking, automated confirmations, and conflict prevention all in one place.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Customer Database</h3>
+                    <p>Keep track of all your customers, their booking history, preferences, and contact information.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Inventory Tracking</h3>
+                    <p>Manage your entire fleet of inflatables, concessions, and add-ons with quantity tracking.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3>Payment Processing</h3>
+                    <p>Track deposits, partial payments, and balances. Know exactly who owes what at a glance.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Digital Waivers</h3>
+                    <p>Collect signatures electronically before the event. No more chasing paper waivers.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Delivery Zones</h3>
+                    <p>Set up delivery fees by ZIP code. Automatically calculate delivery charges during booking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Simple, Transparent Pricing</h2>
+                <p>No hidden fees. No contracts. Cancel anytime.</p>
+            </div>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="pricing-name">Starter</div>
+                    <div class="pricing-price">$29<span>/month</span></div>
+                    <div class="pricing-desc">Perfect for new rental businesses</div>
+                    <ul class="pricing-features">
+                        <li>Up to 50 bookings/month</li>
+                        <li>Customer database</li>
+                        <li>Basic inventory</li>
+                        <li>Email support</li>
+                    </ul>
+                    <a href="/demo/admin" class="btn btn-secondary" style="width:100%">Start Free Trial</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">MOST POPULAR</div>
+                    <div class="pricing-name">Professional</div>
+                    <div class="pricing-price">$79<span>/month</span></div>
+                    <div class="pricing-desc">For growing rental operations</div>
+                    <ul class="pricing-features">
+                        <li>Unlimited bookings</li>
+                        <li>Digital waivers</li>
+                        <li>Delivery zones</li>
+                        <li>Payment tracking</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <a href="/demo/admin" class="btn btn-white" style="width:100%">Start Free Trial</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta">
+        <h2>Ready to Streamline Your Business?</h2>
+        <p>Join hundreds of bounce house rental operators who've simplified their operations.</p>
+        <a href="/demo/admin" class="btn btn-primary btn-lg">Try the Demo Now →</a>
+    </section>
+    
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="/demo">Customer Demo</a>
+            <a href="/demo/admin">Admin Demo</a>
+        </div>
+        <p>© 2024 BouncePlatform. Built for bounce house rental businesses.</p>
+    </footer>
+</body>
+</html>
