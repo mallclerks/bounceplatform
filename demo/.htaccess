@@ -1,0 +1,13 @@
+# Set default directory index
+DirectoryIndex index.php index.html
+
+# Enable PHP processing
+<IfModule mod_mime.c>
+    AddType application/x-httpd-php .php
+</IfModule>
+
+# Disable directory listing
+Options -Indexes
+
+# UTF-8 encoding
+AddDefaultCharset UTF-8
