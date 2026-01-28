@@ -164,6 +164,41 @@ $catNames = [
         
         .loading-spinner { display: inline-block; width: 20px; height: 20px; border: 2px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 0.8s linear infinite; }
         @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Insurance Disclaimer Modal */
+        .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; visibility: hidden; transition: all 0.3s; }
+        .modal-overlay.open { opacity: 1; visibility: visible; }
+        .modal-content { background: white; border-radius: 12px; max-width: 700px; width: 90%; max-height: 85vh; display: flex; flex-direction: column; transform: translateY(20px); transition: transform 0.3s; }
+        .modal-overlay.open .modal-content { transform: translateY(0); }
+        .modal-header { padding: 1.25rem; border-bottom: 1px solid var(--gray-200); display: flex; justify-content: space-between; align-items: center; }
+        .modal-header h3 { font-size: 1.125rem; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; }
+        .modal-close { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--gray-400); padding: 0.25rem; line-height: 1; }
+        .modal-close:hover { color: var(--gray-700); }
+        .modal-body { flex: 1; overflow-y: auto; padding: 1.5rem; }
+        .modal-footer { padding: 1.25rem; border-top: 1px solid var(--gray-200); background: var(--gray-50); }
+
+        /* Disclaimer Document Styling */
+        .disclaimer-document { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 8px; padding: 1.5rem; font-size: 0.875rem; line-height: 1.7; max-height: 400px; overflow-y: auto; }
+        .disclaimer-document h4 { font-size: 1rem; font-weight: 700; margin-bottom: 1rem; color: var(--gray-800); }
+        .disclaimer-document h5 { font-size: 0.9rem; font-weight: 600; margin-top: 1.25rem; margin-bottom: 0.5rem; color: var(--gray-700); }
+        .disclaimer-document p { margin-bottom: 0.75rem; color: var(--gray-600); }
+        .disclaimer-document ul { margin: 0.5rem 0 0.75rem 1.5rem; }
+        .disclaimer-document li { margin-bottom: 0.375rem; color: var(--gray-600); }
+
+        /* Checkbox and Signature Styling */
+        .insurance-section { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 1px solid #f59e0b; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
+        .insurance-section-title { font-size: 0.85rem; font-weight: 600; color: #92400e; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; }
+        .checkbox-group { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem; }
+        .checkbox-group input[type="checkbox"] { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--primary); cursor: pointer; flex-shrink: 0; }
+        .checkbox-group label { font-size: 0.85rem; color: var(--gray-700); cursor: pointer; line-height: 1.4; }
+        .checkbox-group label a { color: var(--primary); text-decoration: underline; font-weight: 500; }
+        .checkbox-group label a:hover { color: var(--primary-dark); }
+        .signature-field { margin-top: 0.75rem; }
+        .signature-field label { display: block; font-size: 0.8rem; font-weight: 500; margin-bottom: 0.375rem; color: var(--gray-700); }
+        .signature-input { width: 100%; padding: 0.75rem 1rem; border: 2px dashed var(--gray-300); border-radius: 8px; font-size: 1.125rem; font-family: 'Brush Script MT', 'Segoe Script', cursive; text-align: center; background: white; transition: all 0.2s; }
+        .signature-input:focus { outline: none; border-color: var(--primary); border-style: solid; background: #fff7ed; }
+        .signature-input::placeholder { font-family: 'Inter', sans-serif; font-size: 0.875rem; color: var(--gray-400); }
+        .signature-note { font-size: 0.7rem; color: var(--gray-500); margin-top: 0.375rem; text-align: center; }
         
         @media (max-width: 1024px) {
             .main-container { flex-direction: column; }
@@ -369,6 +404,20 @@ $catNames = [
                         <div id="promoMessage" class="promo-message"></div>
                     </div>
                     <div id="pricingSummary"></div>
+
+                    <!-- Insurance Disclaimer Agreement -->
+                    <div class="insurance-section">
+                        <div class="insurance-section-title">🛡️ Insurance & Liability Waiver</div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="insuranceAgree">
+                            <label for="insuranceAgree">I have read and agree to the <a href="#" onclick="openInsuranceModal(); return false;">Insurance & Liability Waiver</a>. I understand and accept the terms, conditions, and risks associated with renting inflatable equipment.</label>
+                        </div>
+                        <div class="signature-field">
+                            <label>Sign Your Full Name *</label>
+                            <input type="text" class="signature-input" id="waiverSignature" placeholder="Type your full legal name">
+                            <div class="signature-note">By typing your name above, you are electronically signing this agreement</div>
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- Success -->
@@ -392,6 +441,61 @@ $catNames = [
         </div>
     </div>
     
+    <!-- Insurance Disclaimer Modal -->
+    <div class="modal-overlay" id="insuranceModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>🛡️ Insurance & Liability Waiver</h3>
+                <button class="modal-close" onclick="closeInsuranceModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="disclaimer-document">
+                    <h4>RENTAL AGREEMENT, LIABILITY WAIVER & INSURANCE DISCLAIMER</h4>
+
+                    <h5>1. ASSUMPTION OF RISK</h5>
+                    <p>I understand that the use of inflatable equipment, including but not limited to bounce houses, water slides, obstacle courses, and related equipment (collectively, "Equipment"), involves inherent risks. These risks include, but are not limited to: falls, collisions with other participants, equipment malfunction, and physical injury. I voluntarily assume all such risks, both known and unknown.</p>
+
+                    <h5>2. RELEASE OF LIABILITY</h5>
+                    <p>In consideration of being permitted to rent and use the Equipment, I hereby RELEASE, WAIVE, DISCHARGE AND COVENANT NOT TO SUE <?= htmlspecialchars($businessName) ?>, its owners, officers, employees, agents, and representatives (collectively, "Released Parties") from any and all liability, claims, demands, actions, or causes of action arising out of or related to any loss, damage, or injury, including death, that may be sustained by me or any participant, or to any property belonging to me, while participating in rental activities, or while on or upon the premises where the activities are being conducted.</p>
+
+                    <h5>3. INDEMNIFICATION</h5>
+                    <p>I agree to INDEMNIFY AND HOLD HARMLESS the Released Parties from any loss, liability, damage, or costs, including court costs and attorney fees, that may be incurred due to my participation in the activities, whether caused by the negligence of the Released Parties or otherwise.</p>
+
+                    <h5>4. INSURANCE ACKNOWLEDGMENT</h5>
+                    <p>I understand and acknowledge that:</p>
+                    <ul>
+                        <li><?= htmlspecialchars($businessName) ?> carries general liability insurance for its rental operations</li>
+                        <li>This insurance does NOT cover injuries sustained by renters or their guests during equipment use</li>
+                        <li>I am responsible for ensuring adequate supervision of all users of the Equipment</li>
+                        <li>I am encouraged to obtain personal liability insurance coverage for my event</li>
+                    </ul>
+
+                    <h5>5. SAFETY RULES & GUIDELINES</h5>
+                    <p>I agree to follow all safety rules and guidelines provided by <?= htmlspecialchars($businessName) ?>, including:</p>
+                    <ul>
+                        <li>Maintaining adult supervision at all times while Equipment is in use</li>
+                        <li>Ensuring users remove shoes, eyeglasses, jewelry, and sharp objects before use</li>
+                        <li>Not allowing users to exceed the recommended capacity or age limits</li>
+                        <li>Not allowing flips, roughhousing, or climbing on exterior walls</li>
+                        <li>Keeping Equipment properly staked/anchored at all times</li>
+                        <li>Turning off Equipment in case of high winds (15+ mph) or inclement weather</li>
+                    </ul>
+
+                    <h5>6. MEDICAL AUTHORIZATION</h5>
+                    <p>I authorize <?= htmlspecialchars($businessName) ?> to seek emergency medical treatment for any participant if I am unable to be reached and consent to such treatment is required.</p>
+
+                    <h5>7. GOVERNING LAW</h5>
+                    <p>This agreement shall be governed by and construed in accordance with the laws of the State of Illinois. Any disputes arising under this agreement shall be resolved in the courts of Kankakee County, Illinois.</p>
+
+                    <p style="margin-top: 1.5rem; font-weight: 600; color: var(--gray-800);">By signing below, I acknowledge that I have read this agreement, fully understand its terms, understand that I am giving up substantial rights, and have signed it freely and voluntarily without any inducement.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" style="width:100%;" onclick="closeInsuranceModal()">I Have Read This Document</button>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
         <p>© <?= date('Y') ?> <?= htmlspecialchars($businessName) ?> · <a href="tel:<?= preg_replace('/[^0-9]/', '', $phone) ?>"><?= htmlspecialchars($phone) ?></a></p>
         <p style="margin-top:0.5rem;"><a href="admin/">Admin Panel</a> · <a href="/">BouncePlatform</a></p>
@@ -492,7 +596,7 @@ $catNames = [
     function cartAction() {
         if (currentStep === 1 && cart.length > 0 && document.getElementById('eventDate').value) goToStep(2);
         else if (currentStep === 2 && validateStep2()) goToStep(3);
-        else if (currentStep === 3) submitBooking();
+        else if (currentStep === 3 && validateWaiver()) submitBooking();
     }
     
     function goToStep(step) {
@@ -583,7 +687,24 @@ $catNames = [
             const bookingRes = await fetch('api.php?action=bookings', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ customer_id: customer.id, event_date: document.getElementById('eventDate').value, event_start: document.getElementById('startTime').value, event_end: document.getElementById('endTime').value, event_type: document.getElementById('eventType').value, delivery_address: `${document.getElementById('address').value}, ${document.getElementById('city').value}, IL ${document.getElementById('zip').value}`, delivery_zip: document.getElementById('zip').value, delivery_notes: document.getElementById('deliveryNotes').value, delivery_fee: deliveryFee, items: cart, discount_amount: discountAmt, promo_code: discount.code, source: 'website' })
+                body: JSON.stringify({
+                    customer_id: customer.id,
+                    event_date: document.getElementById('eventDate').value,
+                    event_start: document.getElementById('startTime').value,
+                    event_end: document.getElementById('endTime').value,
+                    event_type: document.getElementById('eventType').value,
+                    delivery_address: `${document.getElementById('address').value}, ${document.getElementById('city').value}, IL ${document.getElementById('zip').value}`,
+                    delivery_zip: document.getElementById('zip').value,
+                    delivery_notes: document.getElementById('deliveryNotes').value,
+                    delivery_fee: deliveryFee,
+                    items: cart,
+                    discount_amount: discountAmt,
+                    promo_code: discount.code,
+                    source: 'website',
+                    waiver_status: 'signed',
+                    waiver_signed_at: new Date().toISOString(),
+                    waiver_signer_name: document.getElementById('waiverSignature').value.trim()
+                })
             });
             const booking = await bookingRes.json();
             if (booking.error) throw new Error(booking.error);
@@ -608,6 +729,8 @@ $catNames = [
         document.getElementById('endTime').value = '18:00';
         document.getElementById('deliveryZoneInfo').innerHTML = '';
         document.getElementById('promoMessage').innerHTML = '';
+        document.getElementById('insuranceAgree').checked = false;
+        document.getElementById('waiverSignature').value = '';
         document.querySelectorAll('.cart-step').forEach(s => { s.classList.toggle('active', s.dataset.step === '1'); s.classList.remove('completed'); });
         document.querySelectorAll('.cart-step-content').forEach(c => { c.style.display = c.dataset.step === '1' ? 'block' : 'none'; });
         document.getElementById('cartFooter').style.display = 'block';
@@ -615,7 +738,54 @@ $catNames = [
     }
     
     function toggleCart() { document.getElementById('cartSection').classList.toggle('open'); }
-    
+
+    // Insurance Modal Functions
+    function openInsuranceModal() {
+        document.getElementById('insuranceModal').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeInsuranceModal() {
+        document.getElementById('insuranceModal').classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    // Close modal on backdrop click
+    document.getElementById('insuranceModal').addEventListener('click', function(e) {
+        if (e.target === this) closeInsuranceModal();
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeInsuranceModal();
+    });
+
+    // Validate insurance waiver agreement
+    function validateWaiver() {
+        const checkbox = document.getElementById('insuranceAgree');
+        const signature = document.getElementById('waiverSignature').value.trim();
+
+        if (!checkbox.checked) {
+            alert('Please read and agree to the Insurance & Liability Waiver before continuing.');
+            checkbox.focus();
+            return false;
+        }
+
+        if (!signature) {
+            alert('Please sign your full name to accept the Insurance & Liability Waiver.');
+            document.getElementById('waiverSignature').focus();
+            return false;
+        }
+
+        if (signature.length < 3) {
+            alert('Please enter your full legal name as your signature.');
+            document.getElementById('waiverSignature').focus();
+            return false;
+        }
+
+        return true;
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
         const map = L.map('serviceMap').setView([baseLocation.lat, baseLocation.lng], 10);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
