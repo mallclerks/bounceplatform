@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/bouncer/public_html/
+    - /bin/cp -R index.html $DEPLOYPATH
+    - /bin/cp -R demo $DEPLOYPATH
