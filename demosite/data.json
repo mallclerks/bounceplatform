@@ -1,0 +1,1237 @@
+{
+    "_meta": {
+        "version": "2.0",
+        "business_name": "Stan's Bounce House",
+        "business_phone": "(815) 555-0100",
+        "business_email": "info@stansbounce.com",
+        "tax_rate": 0.0625,
+        "deposit_percent": 25,
+        "base_location": {
+            "lat": 41.151464084806690379991778172552585601806640625,
+            "lng": -87.796095044317411293377517722547054290771484375
+        },
+        "updated_at": "2026-01-27T17:22:57+00:00"
+    },
+    "products": [
+        {
+            "id": "prod_001",
+            "sku": "BH-001",
+            "name": "Rainbow Castle Bounce House",
+            "slug": "rainbow-castle",
+            "category": "bounce-house",
+            "description": "Our most popular bounce house with vibrant rainbow colors! Perfect for birthday parties and backyard fun.",
+            "daily_rate": 199,
+            "weekend_rate": 249,
+            "deposit_amount": 50,
+            "dimensions": "15'L x 15'W x 14'H",
+            "capacity": "8-10 kids",
+            "age_range": "3-12 years",
+            "weight_limit": 500,
+            "setup_space": "20x20 ft flat area",
+            "power_required": true,
+            "water_required": false,
+            "emoji": "🏰",
+            "image": null,
+            "quantity": 2,
+            "status": "active",
+            "featured": true,
+            "sort_order": 1,
+            "tags": [
+                "popular",
+                "birthday",
+                "all-ages"
+            ],
+            "notes": "",
+            "created_at": "2024-01-01T00:00:00Z",
+            "updated_at": "2024-01-01T00:00:00Z"
+        },
+        {
+            "id": "prod_002",
+            "sku": "WS-001",
+            "name": "Tropical Water Slide",
+            "slug": "tropical-water-slide",
+            "category": "water-slide",
+            "description": "Beat the summer heat with this awesome 18ft tropical themed water slide!",
+            "daily_rate": 349,
+            "weekend_rate": 399,
+            "deposit_amount": 100,
+            "dimensions": "32'L x 12'W x 18'H",
+            "capacity": "4-6 kids",
+            "age_range": "5-14 years",
+            "weight_limit": 400,
+            "setup_space": "40x20 ft flat area",
+            "power_required": true,
+            "water_required": true,
+            "emoji": "🌴",
+            "image": null,
+            "quantity": 1,
+            "status": "active",
+            "featured": true,
+            "sort_order": 2,
+            "tags": [
+                "summer",
+                "water",
+                "popular"
+            ],
+            "notes": "Requires water hookup within 50ft",
+            "created_at": "2024-01-01T00:00:00Z",
+            "updated_at": "2024-01-01T00:00:00Z"
+        },
+        {
+            "id": "prod_003",
+            "sku": "BH-002",
+            "name": "Sports Arena Bouncer",
+            "slug": "sports-arena",
+            "category": "bounce-house",
+            "description": "Sports-themed bounce house with basketball hoop and soccer goal inside!",
+            "daily_rate": 179,
+            "weekend_rate": 219,
+            "deposit_amount": 50,
+            "dimensions": "13'L x 13'W x 13'H",
+            "capacity": "6-8 kids",
+            "age_range": "4-12 years",
+            "weight_limit": 400,
+            "setup_space": "18x18 ft flat area",
+            "power_required": true,
+            "water_required": false,
+            "emoji": "⚽",
+            "image": null,
+            "quantity": 3,
+            "status": "active",
+            "featured": false,
+            "sort_order": 3,
+            "tags": [
+                "sports",
+                "boys",
+                "birthday"
+            ],
+            "notes": "",
+            "created_at": "2024-01-01T00:00:00Z",
+            "updated_at": "2024-01-01T00:00:00Z"
+        },
+        {
+            "id": "prod_004",
+            "sku": "CB-001",
+            "name": "Princess Palace Combo",
+            "slug": "princess-palace-combo",
+            "category": "combo",
+            "description": "The ultimate princess experience! Bounce area, slide, and climbing wall all in one.",
+            "daily_rate": 299,
+            "weekend_rate": 349,
+            "deposit_amount": 75,
+            "dimensions": "20'L x 18'W x 16'H",
+            "capacity": "10-12 kids",
+            "age_range": "3-10 years",
+            "weight_limit": 600,
+            "setup_space": "25x25 ft flat area",
+            "power_required": true,
+            "water_required": false,
+            "emoji": "👑",
+            "image": null,
+            "quantity": 1,
+            "status": "active",
+            "featured": true,
+            "sort_order": 4,
+            "tags": [
+                "princess",
+                "girls",
+                "combo",
+                "popular"
+            ],
+            "notes": "",
+            "created_at": "2024-01-01T00:00:00Z",
+            "updated_at": "2024-01-01T00:00:00Z"
+        },
+        {
+            "id": "prod_005",
+            "sku": "OB-001",
+            "name": "Mega Obstacle Course",
+            "slug": "mega-obstacle-course",
+            "category": "obstacle",
+            "description": "40ft of inflatable fun! Race through tunnels, over walls, and down the slide.",
+            "daily_rate": 399,
+            "weekend_rate": 449,
+            "deposit_amount": 100,
+            "dimensions": "40'L x 12'W x 15'H",
+            "capacity": "4-6 kids racing",
+            "age_range": "6-16 years",
+            "weight_limit": 400,
+            "setup_space": "50x20 ft flat area",
+            "power_required": true,
+            "water_required": false,
+            "emoji": "🏃",
+            "image": null,
+            "quantity": 1,
+            "status": "active",
+            "featured": true,
+            "sort_order": 5,
+            "tags": [
+                "obstacle",
+                "teens",
+                "competition"
+            ],
+            "notes": "Great for school events and church picnics",
+            "created_at": "2024-01-01T00:00:00Z",
+            "updated_at": "2024-01-01T00:00:00Z"
+        },
+        {
+            "id": "prod_006",
+            "sku": "BH-003",
+            "name": "Toddler Play Zone",
+            "slug": "toddler-play-zone",
+            "category": "bounce-house",
+            "description": "Safe and gentle bounce house designed specifically for little ones ages 1-4.",
+            "daily_rate": 149,
+            "weekend_rate": 179,
+            "deposit_amount": 40,
+            "dimensions": "10'L x 10'W x 8'H",
+            "capacity": "4-6 toddlers",
+            "age_range": "1-4 years",
+            "weight_limit": 200,
+            "setup_space": "15x15 ft flat area",
+            "power_required": true,
+            "water_required": false,
+            "emoji": "🧸",
+            "image": null,
+            "quantity": 2,
+            "status": "active",
+            "featured": false,
+            "sort_order": 6,
+            "tags": [
+                "toddler",
+                "safe",
+                "small"
+            ],
+            "notes": "",
+            "created_at": "2024-01-01T00:00:00Z",
+            "updated_at": "2024-01-01T00:00:00Z"
+        },
+        {
+            "id": "prod_007",
+            "sku": "CN-001",
+            "name": "Cotton Candy Machine",
+            "slug": "cotton-candy-machine",
+            "category": "concession",
+            "description": "Professional cotton candy machine. Includes supplies for 50 servings!",
+            "daily_rate": 75,
+            "weekend_rate": 85,
+            "deposit_amount": 25,
+            "dimensions": "2'L x 2'W x 3'H",
+            "capacity": "N\/A",
+            "age_range": "All ages",
+            "weight_limit": null,
+            "setup_space": "Table required",
+            "power_required": true,
+            "water_required": false,
+            "emoji": "🍭",
+            "image": null,
+            "quantity": 4,
+            "status": "active",
+            "featured": false,
+            "sort_order": 10,
+            "tags": [
+                "concession",
+                "addon",
+                "food"
+            ],
+            "notes": "Includes 50 cones and sugar",
+            "created_at": "2024-01-01T00:00:00Z",
+            "updated_at": "2024-01-01T00:00:00Z"
+        },
+        {
+            "id": "prod_008",
+            "sku": "CN-002",
+            "name": "Popcorn Machine",
+            "slug": "popcorn-machine",
+            "category": "concession",
+            "description": "Classic movie theater style popcorn machine. Includes supplies for 50 servings!",
+            "daily_rate": 65,
+            "weekend_rate": 75,
+            "deposit_amount": 25,
+            "dimensions": "2'L x 2'W x 4'H",
+            "capacity": "N\/A",
+            "age_range": "All ages",
+            "weight_limit": null,
+            "setup_space": "Table required",
+            "power_required": true,
+            "water_required": false,
+            "emoji": "🍿",
+            "image": null,
+            "quantity": 3,
+            "status": "active",
+            "featured": false,
+            "sort_order": 11,
+            "tags": [
+                "concession",
+                "addon",
+                "food"
+            ],
+            "notes": "Includes kernels, oil, and bags",
+            "created_at": "2024-01-01T00:00:00Z",
+            "updated_at": "2024-01-01T00:00:00Z"
+        }
+    ],
+    "customers": [
+        {
+            "id": "cust_001",
+            "first_name": "Sarah",
+            "last_name": "Johnson",
+            "email": "sarah.johnson@email.com",
+            "phone": "8155550123",
+            "address": "123 Oak St",
+            "city": "Bradley",
+            "state": "IL",
+            "zip": "60915",
+            "address_notes": "Gate code: 1234. Dogs are friendly.",
+            "source": "google",
+            "tags": [
+                "vip",
+                "repeat"
+            ],
+            "notes": "Prefers morning deliveries. Always tips well!",
+            "created_at": "2023-06-15T10:00:00Z",
+            "updated_at": "2024-01-20T14:30:00Z"
+        },
+        {
+            "id": "cust_002",
+            "first_name": "Mike",
+            "last_name": "Thompson",
+            "email": "mike.t@email.com",
+            "phone": "8155550456",
+            "address": "456 Maple Ave",
+            "city": "Bourbonnais",
+            "state": "IL",
+            "zip": "60914",
+            "address_notes": "",
+            "source": "referral",
+            "tags": [],
+            "notes": "",
+            "created_at": "2023-09-20T15:00:00Z",
+            "updated_at": "2023-09-20T15:00:00Z"
+        },
+        {
+            "id": "cust_003",
+            "first_name": "Lisa",
+            "last_name": "Chen",
+            "email": "lisa.chen@email.com",
+            "phone": "8155550789",
+            "address": "789 Elm Dr",
+            "city": "Kankakee",
+            "state": "IL",
+            "zip": "60901",
+            "address_notes": "Church parking lot - enter from Main St",
+            "source": "facebook",
+            "tags": [
+                "vip",
+                "church",
+                "repeat"
+            ],
+            "notes": "Books for Faith Community Church events. VIP customer!",
+            "created_at": "2023-03-10T09:00:00Z",
+            "updated_at": "2024-01-25T10:00:00Z"
+        },
+        {
+            "id": "cust_004",
+            "first_name": "David",
+            "last_name": "Wilson",
+            "email": "dwilson@email.com",
+            "phone": "8155550321",
+            "address": "321 Pine St",
+            "city": "Manteno",
+            "state": "IL",
+            "zip": "60950",
+            "address_notes": "",
+            "source": "website",
+            "tags": [],
+            "notes": "",
+            "created_at": "2024-01-05T09:00:00Z",
+            "updated_at": "2024-01-05T09:00:00Z"
+        },
+        {
+            "id": "cust_005",
+            "first_name": "Jennifer",
+            "last_name": "Adams",
+            "email": "jadams@email.com",
+            "phone": "8155550654",
+            "address": "654 Cedar Ln",
+            "city": "Bradley",
+            "state": "IL",
+            "zip": "60915",
+            "address_notes": "Large backyard, easy access",
+            "source": "google",
+            "tags": [],
+            "notes": "Referred by Sarah Johnson",
+            "created_at": "2023-11-15T11:00:00Z",
+            "updated_at": "2024-01-22T14:00:00Z"
+        },
+        {
+            "first_name": "bingo",
+            "last_name": "bluey",
+            "email": "mallclerks@gmail.com",
+            "phone": "8159549095",
+            "address": "279 barrington lane",
+            "city": "Bourbonnais",
+            "state": "IL",
+            "zip": "60914",
+            "source": "website",
+            "notes": "",
+            "id": "cust_7b5bb50a",
+            "created_at": "2026-01-27T17:21:03+00:00",
+            "updated_at": "2026-01-27T17:21:03+00:00"
+        }
+    ],
+    "bookings": [
+        {
+            "id": "book_001",
+            "booking_number": "BK-2024-001",
+            "customer_id": "cust_001",
+            "status": "confirmed",
+            "event_date": "2024-01-27",
+            "event_start": "10:00",
+            "event_end": "18:00",
+            "event_type": "birthday",
+            "event_name": "Emma's 7th Birthday",
+            "delivery_address": "123 Oak St, Bradley, IL 60915",
+            "delivery_notes": "Gate code: 1234",
+            "items": [
+                {
+                    "product_id": "prod_001",
+                    "product_name": "Rainbow Castle Bounce House",
+                    "quantity": 1,
+                    "unit_price": 199,
+                    "subtotal": 199
+                }
+            ],
+            "subtotal": 199,
+            "delivery_fee": 0,
+            "tax": 12.4399999999999995026200849679298698902130126953125,
+            "discount_amount": 0,
+            "discount_code": null,
+            "total": 211.43999999999999772626324556767940521240234375,
+            "deposit_required": 50,
+            "amount_paid": 211.43999999999999772626324556767940521240234375,
+            "balance_due": 0,
+            "payment_status": "paid",
+            "waiver_status": "signed",
+            "waiver_signed_at": "2024-01-16T14:30:00Z",
+            "waiver_signer_name": "Sarah Johnson",
+            "assigned_driver": "Jake Martinez",
+            "internal_notes": "Regular customer - priority service",
+            "source": "phone",
+            "created_at": "2024-01-15T10:00:00Z",
+            "updated_at": "2024-01-20T09:00:00Z"
+        },
+        {
+            "id": "book_002",
+            "booking_number": "BK-2024-002",
+            "customer_id": "cust_002",
+            "status": "delivered",
+            "event_date": "2024-01-28",
+            "event_start": "09:00",
+            "event_end": "17:00",
+            "event_type": "birthday",
+            "event_name": "Twin's Birthday Party",
+            "delivery_address": "456 Maple Ave, Bourbonnais, IL 60914",
+            "delivery_notes": "",
+            "items": [
+                {
+                    "product_id": "prod_002",
+                    "product_name": "Tropical Water Slide",
+                    "quantity": 1,
+                    "unit_price": 349,
+                    "subtotal": 349
+                },
+                {
+                    "product_id": "prod_007",
+                    "product_name": "Cotton Candy Machine",
+                    "quantity": 1,
+                    "unit_price": 75,
+                    "subtotal": 75
+                }
+            ],
+            "subtotal": 424,
+            "delivery_fee": 0,
+            "tax": 26.5,
+            "discount_amount": 0,
+            "discount_code": null,
+            "total": 450.5,
+            "deposit_required": 125,
+            "amount_paid": 450.5,
+            "balance_due": 0,
+            "payment_status": "paid",
+            "waiver_status": "pending",
+            "waiver_signed_at": null,
+            "waiver_signer_name": null,
+            "assigned_driver": null,
+            "internal_notes": "Need to follow up on waiver",
+            "source": "website",
+            "created_at": "2024-01-18T15:00:00Z",
+            "updated_at": "2026-01-27T17:01:29+00:00"
+        },
+        {
+            "id": "book_003",
+            "booking_number": "BK-2024-003",
+            "customer_id": "cust_003",
+            "status": "completed",
+            "event_date": "2024-02-03",
+            "event_start": "11:00",
+            "event_end": "19:00",
+            "event_type": "church",
+            "event_name": "Faith Community Church Picnic",
+            "delivery_address": "789 Elm Dr, Kankakee, IL 60901",
+            "delivery_notes": "Church parking lot - enter from Main St",
+            "items": [
+                {
+                    "product_id": "prod_004",
+                    "product_name": "Princess Palace Combo",
+                    "quantity": 1,
+                    "unit_price": 299,
+                    "subtotal": 299
+                }
+            ],
+            "subtotal": 299,
+            "delivery_fee": 50,
+            "tax": 21.809999999999998721023075631819665431976318359375,
+            "discount_amount": 0,
+            "discount_code": null,
+            "total": 370.81000000000000227373675443232059478759765625,
+            "deposit_required": 75,
+            "amount_paid": 370.81000000000000227373675443232059478759765625,
+            "balance_due": 0,
+            "payment_status": "paid",
+            "waiver_status": "signed",
+            "waiver_signed_at": "2024-01-12T09:15:00Z",
+            "waiver_signer_name": "Lisa Chen",
+            "assigned_driver": "Jake Martinez",
+            "internal_notes": "VIP customer - church event",
+            "source": "phone",
+            "created_at": "2024-01-10T11:00:00Z",
+            "updated_at": "2026-01-27T17:01:25+00:00"
+        },
+        {
+            "id": "book_004",
+            "booking_number": "BK-2024-004",
+            "customer_id": "cust_004",
+            "status": "delivered",
+            "event_date": "2024-01-26",
+            "event_start": "12:00",
+            "event_end": "18:00",
+            "event_type": "birthday",
+            "event_name": "Birthday Party",
+            "delivery_address": "321 Pine St, Manteno, IL 60950",
+            "delivery_notes": "",
+            "items": [
+                {
+                    "product_id": "prod_004",
+                    "product_name": "Princess Palace Combo",
+                    "quantity": 1,
+                    "unit_price": 299,
+                    "subtotal": 299
+                }
+            ],
+            "subtotal": 299,
+            "delivery_fee": 50,
+            "tax": 21.809999999999998721023075631819665431976318359375,
+            "discount_amount": 0,
+            "discount_code": null,
+            "total": 370.81000000000000227373675443232059478759765625,
+            "deposit_required": 75,
+            "amount_paid": 370.81000000000000227373675443232059478759765625,
+            "balance_due": 0,
+            "payment_status": "paid",
+            "waiver_status": "signed",
+            "waiver_signed_at": "2024-01-08T16:45:00Z",
+            "waiver_signer_name": "David Wilson",
+            "assigned_driver": "Jake Martinez",
+            "internal_notes": "",
+            "source": "website",
+            "created_at": "2024-01-05T09:00:00Z",
+            "updated_at": "2024-01-26T11:30:00Z"
+        },
+        {
+            "id": "book_005",
+            "booking_number": "BK-2024-005",
+            "customer_id": "cust_005",
+            "status": "completed",
+            "event_date": "2024-02-10",
+            "event_start": "10:00",
+            "event_end": "16:00",
+            "event_type": "birthday",
+            "event_name": "Soccer Party",
+            "delivery_address": "654 Cedar Ln, Bradley, IL 60915",
+            "delivery_notes": "Large backyard, easy access",
+            "items": [
+                {
+                    "product_id": "prod_003",
+                    "product_name": "Sports Arena Bouncer",
+                    "quantity": 1,
+                    "unit_price": 179,
+                    "subtotal": 179
+                }
+            ],
+            "subtotal": 179,
+            "delivery_fee": 0,
+            "tax": 11.1899999999999995026200849679298698902130126953125,
+            "discount_amount": 0,
+            "discount_code": null,
+            "total": 190.18999999999999772626324556767940521240234375,
+            "deposit_required": 50,
+            "amount_paid": 190.18999999999999772626324556767940521240234375,
+            "balance_due": 0,
+            "payment_status": "paid",
+            "waiver_status": "pending",
+            "waiver_signed_at": null,
+            "waiver_signer_name": null,
+            "assigned_driver": null,
+            "internal_notes": "Waiting for deposit",
+            "source": "referral",
+            "created_at": "2024-01-22T14:00:00Z",
+            "updated_at": "2026-01-27T17:01:22+00:00"
+        },
+        {
+            "booking_number": "BK-2026-001",
+            "customer_id": "cust_7b5bb50a",
+            "status": "cancelled",
+            "event_date": "2026-01-29",
+            "event_start": "10:00",
+            "event_end": "18:00",
+            "event_type": "birthday",
+            "event_name": "",
+            "delivery_address": "279 barrington lane, Bourbonnais, IL 60914",
+            "delivery_notes": "",
+            "items": [
+                {
+                    "product_id": "prod_006",
+                    "product_name": "Toddler Play Zone",
+                    "emoji": "🧸",
+                    "unit_price": 149,
+                    "quantity": 1,
+                    "subtotal": 149
+                },
+                {
+                    "product_id": "prod_001",
+                    "product_name": "Rainbow Castle Bounce House",
+                    "emoji": "🏰",
+                    "unit_price": 199,
+                    "quantity": 1,
+                    "subtotal": 199
+                },
+                {
+                    "product_id": "prod_002",
+                    "product_name": "Tropical Water Slide",
+                    "emoji": "🌴",
+                    "unit_price": 349,
+                    "quantity": 1,
+                    "subtotal": 349
+                }
+            ],
+            "subtotal": 697,
+            "delivery_fee": 0,
+            "tax": 43.56000000000000227373675443232059478759765625,
+            "discount_amount": 0,
+            "total": 740.55999999999994543031789362430572509765625,
+            "deposit_required": 185.1399999999999863575794734060764312744140625,
+            "amount_paid": 740.55999999999994543031789362430572509765625,
+            "balance_due": 0,
+            "payment_status": "paid",
+            "waiver_status": "pending",
+            "internal_notes": "",
+            "source": "website",
+            "id": "book_6cfbdfce",
+            "created_at": "2026-01-27T17:21:03+00:00",
+            "updated_at": "2026-01-27T17:22:57+00:00"
+        }
+    ],
+    "payments": [
+        {
+            "id": "pay_001",
+            "booking_id": "book_001",
+            "amount": 50,
+            "method": "card",
+            "type": "deposit",
+            "reference": "ch_abc123",
+            "notes": "",
+            "recorded_by": "admin",
+            "created_at": "2024-01-15T10:00:00Z"
+        },
+        {
+            "id": "pay_002",
+            "booking_id": "book_001",
+            "amount": 161.43999999999999772626324556767940521240234375,
+            "method": "card",
+            "type": "balance",
+            "reference": "ch_def456",
+            "notes": "",
+            "recorded_by": "admin",
+            "created_at": "2024-01-20T09:00:00Z"
+        },
+        {
+            "id": "pay_003",
+            "booking_id": "book_002",
+            "amount": 125,
+            "method": "card",
+            "type": "deposit",
+            "reference": "ch_ghi789",
+            "notes": "",
+            "recorded_by": "admin",
+            "created_at": "2024-01-18T15:00:00Z"
+        },
+        {
+            "id": "pay_004",
+            "booking_id": "book_003",
+            "amount": 75,
+            "method": "card",
+            "type": "deposit",
+            "reference": "ch_jkl012",
+            "notes": "",
+            "recorded_by": "admin",
+            "created_at": "2024-01-10T11:00:00Z"
+        },
+        {
+            "id": "pay_005",
+            "booking_id": "book_003",
+            "amount": 99,
+            "method": "cash",
+            "type": "partial",
+            "reference": "",
+            "notes": "Cash at church",
+            "recorded_by": "admin",
+            "created_at": "2024-01-25T10:00:00Z"
+        },
+        {
+            "id": "pay_006",
+            "booking_id": "book_004",
+            "amount": 75,
+            "method": "card",
+            "type": "deposit",
+            "reference": "ch_mno345",
+            "notes": "",
+            "recorded_by": "admin",
+            "created_at": "2024-01-05T09:00:00Z"
+        },
+        {
+            "id": "pay_007",
+            "booking_id": "book_004",
+            "amount": 295.81000000000000227373675443232059478759765625,
+            "method": "card",
+            "type": "balance",
+            "reference": "ch_pqr678",
+            "notes": "",
+            "recorded_by": "admin",
+            "created_at": "2024-01-24T14:00:00Z"
+        },
+        {
+            "booking_id": "book_005",
+            "amount": 190.18999999999999772626324556767940521240234375,
+            "method": "card",
+            "type": "payment",
+            "reference": "",
+            "notes": "",
+            "id": "paym_fb5dc516",
+            "created_at": "2026-01-27T17:01:01+00:00",
+            "updated_at": "2026-01-27T17:01:01+00:00"
+        },
+        {
+            "booking_id": "book_003",
+            "amount": 196.81000000000000227373675443232059478759765625,
+            "method": "card",
+            "type": "payment",
+            "reference": "",
+            "notes": "",
+            "id": "paym_eb33390f",
+            "created_at": "2026-01-27T17:01:07+00:00",
+            "updated_at": "2026-01-27T17:01:07+00:00"
+        },
+        {
+            "booking_id": "book_002",
+            "amount": 325.5,
+            "method": "card",
+            "type": "payment",
+            "reference": "",
+            "notes": "",
+            "id": "paym_08da0a5f",
+            "created_at": "2026-01-27T17:01:11+00:00",
+            "updated_at": "2026-01-27T17:01:11+00:00"
+        },
+        {
+            "booking_id": "book_6cfbdfce",
+            "amount": 740.55999999999994543031789362430572509765625,
+            "method": "card",
+            "type": "payment",
+            "reference": "",
+            "notes": "",
+            "id": "paym_5e8f8ca6",
+            "created_at": "2026-01-27T17:22:21+00:00",
+            "updated_at": "2026-01-27T17:22:21+00:00"
+        }
+    ],
+    "promos": [
+        {
+            "id": "promo_001",
+            "code": "SUMMER20",
+            "description": "20% off summer rentals",
+            "discount_type": "percent",
+            "discount_value": 20,
+            "min_order": 200,
+            "max_uses": 100,
+            "times_used": 45,
+            "valid_from": "2024-05-01",
+            "valid_until": "2024-08-31",
+            "status": "active",
+            "created_at": "2024-01-01T00:00:00Z",
+            "updated_at": "2026-01-27T14:56:51+00:00"
+        },
+        {
+            "id": "promo_002",
+            "code": "FIRSTTIME",
+            "description": "$25 off first rental",
+            "discount_type": "flat",
+            "discount_value": 25,
+            "min_order": 150,
+            "max_uses": null,
+            "times_used": 23,
+            "valid_from": null,
+            "valid_until": null,
+            "status": "active",
+            "created_at": "2024-01-01T00:00:00Z"
+        },
+        {
+            "id": "promo_003",
+            "code": "VIP50",
+            "description": "$50 off for VIP customers",
+            "discount_type": "flat",
+            "discount_value": 50,
+            "min_order": 300,
+            "max_uses": 10,
+            "times_used": 8,
+            "valid_from": null,
+            "valid_until": "2024-12-31",
+            "status": "active",
+            "created_at": "2024-01-01T00:00:00Z"
+        }
+    ],
+    "zones": [
+        {
+            "id": "zone_001",
+            "name": "Zone A - Local",
+            "description": "Bradley, Bourbonnais, Kankakee",
+            "zip_codes": [
+                "60915",
+                "60914",
+                "60901"
+            ],
+            "delivery_fee": 0,
+            "color": "#10b981",
+            "polygon": [
+                [
+                    41.17999999999999971578290569595992565155029296875,
+                    -87.9200000000000017053025658242404460906982421875
+                ],
+                [
+                    41.17999999999999971578290569595992565155029296875,
+                    -87.81999999999999317878973670303821563720703125
+                ],
+                [
+                    41.11999999999999744204615126363933086395263671875,
+                    -87.81999999999999317878973670303821563720703125
+                ],
+                [
+                    41.0799999999999982946974341757595539093017578125,
+                    -87.840000000000003410605131648480892181396484375
+                ],
+                [
+                    41.0799999999999982946974341757595539093017578125,
+                    -87.900000000000005684341886080801486968994140625
+                ],
+                [
+                    41.11999999999999744204615126363933086395263671875,
+                    -87.9200000000000017053025658242404460906982421875
+                ]
+            ]
+        },
+        {
+            "id": "zone_002",
+            "name": "Zone B - Nearby",
+            "description": "Manteno, Peotone, Momence",
+            "zip_codes": [
+                "60950",
+                "60468",
+                "60954"
+            ],
+            "delivery_fee": 50,
+            "color": "#3b82f6",
+            "polygon": [
+                [
+                    41.25,
+                    -87.9800000000000039790393202565610408782958984375
+                ],
+                [
+                    41.25,
+                    -87.780000000000001136868377216160297393798828125
+                ],
+                [
+                    41.17999999999999971578290569595992565155029296875,
+                    -87.780000000000001136868377216160297393798828125
+                ],
+                [
+                    41.17999999999999971578290569595992565155029296875,
+                    -87.81999999999999317878973670303821563720703125
+                ],
+                [
+                    41.11999999999999744204615126363933086395263671875,
+                    -87.81999999999999317878973670303821563720703125
+                ],
+                [
+                    41.0799999999999982946974341757595539093017578125,
+                    -87.840000000000003410605131648480892181396484375
+                ],
+                [
+                    41.02000000000000312638803734444081783294677734375,
+                    -87.840000000000003410605131648480892181396484375
+                ],
+                [
+                    41.02000000000000312638803734444081783294677734375,
+                    -87.9800000000000039790393202565610408782958984375
+                ]
+            ]
+        },
+        {
+            "id": "zone_003",
+            "name": "Zone C - Extended",
+            "description": "Frankfort, Mokena, New Lenox",
+            "zip_codes": [
+                "60423",
+                "60448",
+                "60451"
+            ],
+            "delivery_fee": 100,
+            "color": "#f59e0b",
+            "polygon": [
+                [
+                    41.35000000000000142108547152020037174224853515625,
+                    -88.0499999999999971578290569595992565155029296875
+                ],
+                [
+                    41.35000000000000142108547152020037174224853515625,
+                    -87.75
+                ],
+                [
+                    41.25,
+                    -87.75
+                ],
+                [
+                    41.25,
+                    -87.780000000000001136868377216160297393798828125
+                ],
+                [
+                    41.17999999999999971578290569595992565155029296875,
+                    -87.780000000000001136868377216160297393798828125
+                ],
+                [
+                    41.17999999999999971578290569595992565155029296875,
+                    -87.81999999999999317878973670303821563720703125
+                ],
+                [
+                    41.11999999999999744204615126363933086395263671875,
+                    -87.81999999999999317878973670303821563720703125
+                ],
+                [
+                    41.02000000000000312638803734444081783294677734375,
+                    -87.81999999999999317878973670303821563720703125
+                ],
+                [
+                    41.02000000000000312638803734444081783294677734375,
+                    -88.0499999999999971578290569595992565155029296875
+                ]
+            ]
+        },
+        {
+            "name": "test",
+            "description": "brmrlr",
+            "delivery_fee": 22,
+            "color": "#ef4444",
+            "zip_codes": [
+                "60918"
+            ],
+            "polygon": [],
+            "id": "zone_8dcd0319",
+            "created_at": "2026-01-27T01:15:57+00:00",
+            "updated_at": "2026-01-27T01:15:57+00:00"
+        },
+        {
+            "name": "djole zone A",
+            "description": "Its the place",
+            "delivery_fee": 0,
+            "color": "#ec4899",
+            "zip_codes": [
+                "60914",
+                "60915",
+                "60916"
+            ],
+            "polygon": [
+                [
+                    41.188110928427619228386902250349521636962890625,
+                    -87.8469543624669455539333284832537174224853515625
+                ],
+                [
+                    41.2399190519378890940060955472290515899658203125,
+                    -87.9351196624338768970119417645037174224853515625
+                ],
+                [
+                    41.1448458297195287514114170335233211517333984375,
+                    -87.9886780120432518970119417645037174224853515625
+                ],
+                [
+                    41.0589548028109589949963265098631381988525390625,
+                    -87.7758179046213768970119417645037174224853515625
+                ],
+                [
+                    41.1706946058547060829369002021849155426025390625,
+                    -87.6783142425119876861572265625
+                ],
+                [
+                    41.2368210160618531290310784243047237396240234375,
+                    -87.7538452483713768970119417645037174224853515625
+                ],
+                [
+                    41.24714723124214543759080697782337665557861328125,
+                    -87.7909241057932518970119417645037174224853515625
+                ]
+            ],
+            "id": "zone_77b3d432",
+            "created_at": "2026-01-27T01:20:58+00:00",
+            "updated_at": "2026-01-27T01:20:58+00:00"
+        },
+        {
+            "name": "djole zone b",
+            "description": "far away",
+            "delivery_fee": 999,
+            "color": "#ec4899",
+            "zip_codes": [],
+            "polygon": [
+                [
+                    41.17989431908703323870213353075087070465087890625,
+                    -88.48608411848545074462890625
+                ],
+                [
+                    40.63188075205739124839965370483696460723876953125,
+                    -87.9916993528604649554836214520037174224853515625
+                ],
+                [
+                    40.765149449516428603601525537669658660888671875,
+                    -87.2666016966104649554836214520037174224853515625
+                ],
+                [
+                    40.61103343828464318221449502743780612945556640625,
+                    -87.5028077512979649554836214520037174224853515625
+                ],
+                [
+                    41.142674077901602913698297925293445587158203125,
+                    -87.0523682981729649554836214520037174224853515625
+                ],
+                [
+                    40.49834553846810791810639784671366214752197265625,
+                    -87.2171632200479649554836214520037174224853515625
+                ],
+                [
+                    41.3739231470237456278482568450272083282470703125,
+                    -87.1842042356729649554836214520037174224853515625
+                ],
+                [
+                    40.7485054439074474430526606738567352294921875,
+                    -86.8381348997354649554836214520037174224853515625
+                ]
+            ],
+            "id": "zone_d99fc761",
+            "created_at": "2026-01-27T01:22:26+00:00",
+            "updated_at": "2026-01-27T01:22:26+00:00"
+        }
+    ],
+    "staff": [
+        {
+            "id": "staff_001",
+            "name": "Stan",
+            "role": "owner",
+            "email": "stan@stansbounce.com",
+            "phone": "8155550100",
+            "active": true
+        },
+        {
+            "id": "staff_002",
+            "name": "Jake Martinez",
+            "role": "driver",
+            "email": "jake@stansbounce.com",
+            "phone": "8155550101",
+            "active": true
+        },
+        {
+            "id": "staff_003",
+            "name": "Amy Roberts",
+            "role": "driver",
+            "email": "amy@stansbounce.com",
+            "phone": "8155550102",
+            "active": true
+        }
+    ],
+    "settings": {
+        "time_slots": [
+            {
+                "value": "08:00-16:00",
+                "label": "8AM - 4PM"
+            },
+            {
+                "value": "09:00-17:00",
+                "label": "9AM - 5PM"
+            },
+            {
+                "value": "10:00-18:00",
+                "label": "10AM - 6PM"
+            },
+            {
+                "value": "11:00-19:00",
+                "label": "11AM - 7PM"
+            },
+            {
+                "value": "12:00-20:00",
+                "label": "12PM - 8PM"
+            }
+        ],
+        "event_types": [
+            {
+                "value": "birthday",
+                "label": "Birthday Party"
+            },
+            {
+                "value": "graduation",
+                "label": "Graduation"
+            },
+            {
+                "value": "church",
+                "label": "Church Event"
+            },
+            {
+                "value": "school",
+                "label": "School Event"
+            },
+            {
+                "value": "corporate",
+                "label": "Corporate Event"
+            },
+            {
+                "value": "block_party",
+                "label": "Block Party"
+            },
+            {
+                "value": "other",
+                "label": "Other"
+            }
+        ],
+        "booking_sources": [
+            {
+                "value": "website",
+                "label": "Website"
+            },
+            {
+                "value": "phone",
+                "label": "Phone"
+            },
+            {
+                "value": "facebook",
+                "label": "Facebook"
+            },
+            {
+                "value": "google",
+                "label": "Google"
+            },
+            {
+                "value": "referral",
+                "label": "Referral"
+            },
+            {
+                "value": "repeat",
+                "label": "Repeat Customer"
+            }
+        ],
+        "payment_methods": [
+            {
+                "value": "card",
+                "label": "Credit\/Debit Card"
+            },
+            {
+                "value": "cash",
+                "label": "Cash"
+            },
+            {
+                "value": "check",
+                "label": "Check"
+            },
+            {
+                "value": "venmo",
+                "label": "Venmo"
+            },
+            {
+                "value": "zelle",
+                "label": "Zelle"
+            }
+        ],
+        "booking_statuses": [
+            {
+                "value": "pending",
+                "label": "Pending",
+                "color": "#f59e0b"
+            },
+            {
+                "value": "confirmed",
+                "label": "Confirmed",
+                "color": "#3b82f6"
+            },
+            {
+                "value": "delivered",
+                "label": "Delivered",
+                "color": "#8b5cf6"
+            },
+            {
+                "value": "completed",
+                "label": "Completed",
+                "color": "#10b981"
+            },
+            {
+                "value": "cancelled",
+                "label": "Cancelled",
+                "color": "#ef4444"
+            }
+        ],
+        "categories": [
+            {
+                "value": "bounce-house",
+                "label": "Bounce Houses",
+                "emoji": "🏰"
+            },
+            {
+                "value": "water-slide",
+                "label": "Water Slides",
+                "emoji": "🌊"
+            },
+            {
+                "value": "combo",
+                "label": "Combos",
+                "emoji": "🎪"
+            },
+            {
+                "value": "obstacle",
+                "label": "Obstacle Courses",
+                "emoji": "🏃"
+            },
+            {
+                "value": "interactive",
+                "label": "Interactive Games",
+                "emoji": "🎯"
+            },
+            {
+                "value": "concession",
+                "label": "Concessions",
+                "emoji": "🍿"
+            }
+        ]
+    }
+}

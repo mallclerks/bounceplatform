@@ -3,6 +3,7 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/bouncer/public_html/
     - /bin/cp -R index.html $DEPLOYPATH
-    - /bin/cp -R demo $DEPLOYPATH
-    - /bin/cp demo/.htaccess $DEPLOYPATH/demo/.htaccess
-    - /bin/cp demo/admin/.htaccess $DEPLOYPATH/demo/admin/.htaccess
+    - /bin/cp -R demosite $DEPLOYPATH
+    - /bin/cp -R demoadmin $DEPLOYPATH
+    - /bin/cp demosite/.htaccess $DEPLOYPATH/demosite/.htaccess
+    - /bin/cp demoadmin/.htaccess $DEPLOYPATH/demoadmin/.htaccess
